@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;700;800&display=swap');
+
+.loginMain {
+  background-color: #faf6ff;
+  padding: 4em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Exo', sans-serif;
+}
+
+.bookImg {
+  width: 30%;
+  margin: 1em;
+}
+
+p {
+  color: #6000ff;
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+label {
+  color: #6000ff;
+  font-weight: 600;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+input {
+  border: 1px solid #6000ff;
+  border-radius: 1em;
+  padding: 15px;
+  margin: 0 10px;
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginBtn{
+  background-color: #6000ff;
+  padding: 15px 20px;
+  border-radius: 1.5em;
+  color: white;
+  font-size: 20px;
+}
+@media (max-width: 480px) {
+  .bookImg {
+    width: 80%;
+  }
+}
