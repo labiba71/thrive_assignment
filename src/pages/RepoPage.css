@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@500;700;800&display=swap");
+.repoMain {
+  font-family: "Exo", sans-serif;
+}
+.repo {
+  color: black;
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.repoOuter{
+  margin: 5rem 30rem;
+}
+.repoList{
+  border: 2px solid #FF635A;
+  margin: 10px;
+  border-radius: 1rem;
+  background-color: #FFF7F6;
+  
+}
+
+@media (max-width: 480px) {
+  .repoOuter{
+    margin: 3rem 2rem;
+  }
+}
