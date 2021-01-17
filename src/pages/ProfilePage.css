@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@500;700;800&display=swap");
+
+.profileMain {
+  font-family: "Exo", sans-serif;
+}
+.topNav {
+  background-color: #0652dd;
+}
+.homeDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+}
+.homeIcon {
+  padding: 0 5px;
+}
+.avatarInner {
+  border: 5px solid blue;
+  border-radius: 100%;
+  width: 9em;
+  height: 9em;
+}
+.editBtn {
+  background-color: #33b67b;
+  color: white;
+  border-radius: 1em;
+  padding: 5px 16px;
+}
+.name {
+  color: black;
+  font-size: 24px;
+  padding: 0;
+}
+.detailsDiv {
+  border: 1px solid lightgrey;
+  margin: 0 50rem;
+  border-radius: 1rem;
+}
+.email,
+.password {
+  color: gray;
+  font-size: 20px;
+  font-weight: 700;
+}
+.logoutBtn {
+  background-color: red;
+  border-radius: 1rem;
+  padding: 5px 15px;
+  color: white;
+}
+.navBottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.profileBtn,
+.repoBtn {
+  background-color: #0652dd;
+  color: white;
+  padding: 15px;
+  width: 50%;
+  border-radius: 1rem 1rem 0 0;
+  border-top: 4px solid #00299f;
+}
+.changeBtn {
+  background-color: white;
+  border: 1px solid grey;
+  color: grey;
+  border-radius: 0.5rem;
+  padding: 5px;
+  font-size: 16px;
+  height: fit-content;
+}
+@media (max-width: 480px) {
+  .detailsDiv {
+    margin: 0 3rem;
+  }
+  .email,
+  .password {
+    padding: 0;
+    font-size: 18px;
+  }
+  .profileBtn,
+  .repoBtn {
+    padding: 10px;
+  }
+}
