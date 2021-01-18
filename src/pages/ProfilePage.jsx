@@ -1,14 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import thriveIcon from "../resources/thrive.png";
 import homeIcon from "../resources/home.png";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { withRouter } from "react-router";
 import "./ProfilePage.css";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import { EDIT_EMAIL, EDIT_PASSWORD } from "../store/Type.js";
 
 export const ProfilePageComponent = (props) => {
-  useEffect(() => {
-    return () => {};
-  }, []);
+  const [open, setOpen] = useState(false);
+  const [values, setValues] = useState({ email: "", password: "" });
+
+  const dispatch = useDispatch();
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleChange = (name) => (event) => {
+    const value = event.target.value;
+    setValues({ ...values, [name]: value });
+    console.log(value)
+  };
 
   return (
     <div className="profileMain">
@@ -49,13 +70,17 @@ export const ProfilePageComponent = (props) => {
           <p className="email">
             Email: {props.userInfo.email ? props.userInfo.email : "null"}
           </p>
-          <button className="changeBtn">change</button>
+          <button className="changeBtn" onClick={handleClickOpen}>
+            change
+          </button>
         </div>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <p className="password">
             Password: {props.userInfo && props.userInfo.id}
           </p>
-          <button className="changeBtn">change</button>
+          <button className="changeBtn" onClick={handleClickOpen}>
+            change
+          </button>
         </div>
       </div>
       <button
@@ -87,6 +112,72 @@ export const ProfilePageComponent = (props) => {
           Repositories
         </button>
       </nav>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="email"
+            label="Email Address"
+            type="email"
+            fullWidth
+            value={values.email}
+            onChange={handleChange("email")}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch({ type: EDIT_EMAIL, payload: values.email });
+              handleClose();
+            }}
+            color="primary"
+          >
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="form-dialog-title"
+      >
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="password"
+            label="Password"
+            type="password"
+            fullWidth
+            value={values.password}
+            onChange={handleChange("password")}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch({ type: EDIT_PASSWORD, payload: values.password });
+              handleClose();
+            }}
+            color="primary"
+          >
+            Save
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 };

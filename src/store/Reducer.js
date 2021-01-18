@@ -1,6 +1,6 @@
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { USER_LOGIN, GET_REPO_LIST } from "./Type";
+import { USER_LOGIN, GET_REPO_LIST, EDIT_EMAIL, EDIT_PASSWORD } from "./Type";
 
 const persistConfig = {
   key: "rootReducer",
@@ -8,7 +8,10 @@ const persistConfig = {
 };
 
 const initialState = {
-  user: {},
+  user: {
+    emai: "",
+    id: "",
+  },
   repoList: [],
 };
 
@@ -23,6 +26,22 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         repoList: action.payload,
+      };
+    case EDIT_EMAIL:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          email: action.payload,
+        },
+      };
+    case EDIT_PASSWORD:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          id: action.payload,
+        },
       };
     default:
       return state;
