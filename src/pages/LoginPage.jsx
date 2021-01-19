@@ -34,7 +34,7 @@ const LoginPageComponent = (props) => {
           onClick={(e) => {
             e.preventDefault();
             props.userLogin();
-            props.history.push("/profile");
+            props.history.push("/home");
           }}
         >
           Log In
