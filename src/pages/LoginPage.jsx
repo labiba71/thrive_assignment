@@ -9,7 +9,7 @@ import "./LoginPage.css";
 const LoginPageComponent = (props) => {
   return (
     <div className="loginMain">
-      <img src={newtonIcon} alt="icon" />
+      <img className="thriveIcon" src={newtonIcon} alt="icon" />
       <img className="bookImg" src={bookIcon} alt="icon" />
       <p>
         Please find the ID and PIN from SMS. Don’t share your ID or PIN with

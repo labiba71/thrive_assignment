@@ -12,11 +12,17 @@
   align-items: baseline;
   justify-content: center;
 }
+.homeTag {
+  color: gray;
+}
+.profileTag {
+  color: black;
+}
 .homeIcon {
   padding: 0 5px;
 }
 .avatarInner {
-  border: 5px solid blue;
+  border: 8px solid blue;
   border-radius: 100%;
   width: 9em;
   height: 9em;
@@ -34,7 +40,7 @@
 }
 .detailsDiv {
   border: 1px solid lightgrey;
-  margin: 0 40rem;
+  margin: 0 20rem;
   border-radius: 1rem;
 }
 .email,
@@ -47,6 +53,7 @@
   background-color: red;
   border-radius: 1rem;
   padding: 5px 15px;
+  margin-bottom: 60px;
   color: white;
 }
 .navBottom {
@@ -59,7 +66,7 @@
   background-color: #0652dd;
   color: white;
   padding: 15px;
-  width: 50%;
+  width: 33.33%;
   border-radius: 1rem 1rem 0 0;
   border-top: 4px solid #00299f;
 }
@@ -72,6 +79,12 @@
   font-size: 16px;
   height: fit-content;
 }
+.emailPass {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @media (max-width: 480px) {
   .detailsDiv {
     margin: 0 3rem;
@@ -84,5 +97,15 @@
   .profileBtn,
   .repoBtn {
     padding: 10px;
+  }
+  .avatarInner {
+    width: 6em;
+    height: 6em;
+  }
+  .name {
+    font-size: 20px;
+  }
+  .emailPass{
+    justify-content: space-between;
   }
 }

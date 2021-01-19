@@ -8,19 +8,85 @@
   font-weight: 500;
 }
 
-.repoOuter{
-  margin: 5rem 30rem;
+.repoOuter {
+  width: 50%;
+  margin: 60px auto;
 }
-.repoList{
-  border: 2px solid #FF635A;
+.repoList {
+  border: 2px solid #ff635a;
   margin: 10px;
-  border-radius: 1rem;
-  background-color: #FFF7F6;
-  
+  border-radius: 20px;
+  background-color: #fff7f6;
+  display: flex;
 }
-
+.upperDiv {
+  border: 1px solid blue;
+  border-radius: 4%;
+  margin: 0 auto;
+  padding: 0;
+  width: 350px;
+  background-color: #e9fff9;
+}
+.githubTitle {
+  background-color: blue;
+  padding: 8px;
+  margin: 0;
+  color: white;
+  border-radius: 4% 4% 0 0;
+  font-size: 20px;
+}
+.time {
+  color: #22b573;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.date {
+  color: #22b573;
+  padding: 0;
+}
+.goTo {
+  background-color: #7858bb;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 1.5rem;
+}
+.divDetails {
+  width: 80%;
+}
+.divRepo {
+  width: 20%;
+  background-color: #ff635a;
+  border-radius: 0 1rem 1rem 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrowSign {
+  margin: auto;
+  color: #ff635a;
+  padding: 0 10px;
+}
+.day1 {
+  background-color: #e5efff;
+}
+.day2 {
+  background-color: #cddfff;
+  margin: 0 3rem;
+  border-radius: 1rem;
+}
+.day3 {
+  background-color: #b7d0fe;
+  margin: 0 4rem;
+  border-radius: 1rem;
+}
+.day4{
+  font-weight: 700;
+  margin-top: 55px;
+}
 @media (max-width: 480px) {
-  .repoOuter{
-    margin: 3rem 2rem;
+  .repoOuter {
+    width: 90%;
   }
 }

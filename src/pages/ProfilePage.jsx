@@ -28,7 +28,7 @@ export const ProfilePageComponent = (props) => {
   const handleChange = (name) => (event) => {
     const value = event.target.value;
     setValues({ ...values, [name]: value });
-    console.log(value)
+    console.log(value);
   };
 
   return (
@@ -38,8 +38,8 @@ export const ProfilePageComponent = (props) => {
       </nav>
       <div className="homeDiv">
         <img className="homeIcon" src={homeIcon} alt="icon" />
-        <p>Home &gt;</p>
-        <p> Profile</p>
+        <p className="homeTag">Home &gt;</p>
+        <p className="profileTag"> Profile</p>
       </div>
       <div className="avatarOuter">
         <img
@@ -59,14 +59,8 @@ export const ProfilePageComponent = (props) => {
           Followers: {props.userInfo && props.userInfo.followers}
         </p>
       </div>
-      <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+      <div style={{ padding: "25px" }}>
+        <div className="emailPass">
           <p className="email">
             Email: {props.userInfo.email ? props.userInfo.email : "null"}
           </p>
@@ -74,7 +68,7 @@ export const ProfilePageComponent = (props) => {
             change
           </button>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div className="emailPass">
           <p className="password">
             Password: {props.userInfo && props.userInfo.id}
           </p>
@@ -93,6 +87,15 @@ export const ProfilePageComponent = (props) => {
         Logout
       </button>
       <nav className="navBottom">
+        <button
+          className="repoBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            props.history.push("/home");
+          }}
+        >
+          Home
+        </button>
         <button
           className="profileBtn"
           onClick={(e) => {
